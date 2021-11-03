@@ -79,8 +79,9 @@ public class LotteryController
 
     public void handleGenerateNumbers(ActionEvent actionEvent)
     {
-        lottery.generateTestNumbers();
-//        lottery.generateNumbers();
+        lottery.clearNumbers();
+        // lottery.generateTestNumbers();
+        lottery.generateNumbers();
         Set<Integer> numbers = lottery.getNumbers();
         lotteryNumbersLabel.setText(numbers.toString());
         evaluateButton.setVisible(true);

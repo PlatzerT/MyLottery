@@ -1,10 +1,10 @@
 package sample.models;
 
-import java.util.Set;
 import java.util.SortedSet;
 
 public class LotteryTip
 {
+    // static counter that is increased each time a new LotteryTip is created
     private static int idCounter = 0;
 
     private Integer id;

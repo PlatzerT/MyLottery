@@ -37,6 +37,8 @@ public class TipController {
 
     @FXML
     void initialize(){
+
+        // filter tip input
         UnaryOperator<TextFormatter.Change> filter = change -> {
             String text = change.getText();
 
@@ -49,6 +51,8 @@ public class TipController {
         };
         TextFormatter<String> textFormatter = new TextFormatter<>(filter);
         tipInput.setTextFormatter(textFormatter);
+
+        // set placeholder text
         tipInput.setPromptText("z.B. 32 11 5 19 1 24");
         nameInput.setPromptText("Max Mustermann");
 
@@ -104,8 +108,6 @@ public class TipController {
                 successMessage.setVisible(false);
             }
         }).start();
-
-        System.out.println(lottery);
 
         // clear the input
         tipInput.setText("");

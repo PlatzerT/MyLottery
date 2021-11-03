@@ -21,6 +21,10 @@ public class Lottery {
         winners = FXCollections.observableArrayList();
     }
 
+    /**
+     * Get the Lottery Singleton
+     * @return instance
+     */
     public static Lottery getInstance(){
 
         Lottery result = instance;
@@ -35,6 +39,9 @@ public class Lottery {
         return instance;
     }
 
+    /**
+     * Evaluate the winners of the lottery
+     */
     public void evaluateWinners() {
         ListIterator<LotteryTip> iterator = participants.listIterator();
 
@@ -42,16 +49,19 @@ public class Lottery {
 
         while (iterator.hasNext()) {
             LotteryTip currentTip = iterator.next();
-            System.out.println(currentTip);
+
+            // determine correct guesses by intersecting two Sets
             intersection = new TreeSet<>(currentTip.getTipNumbers());
             intersection.retainAll(numbers);
             currentTip.setCorrectGuesses(intersection.size());
 
+            // if a tip has more than one correct guess --> add to the winners list
             if (intersection.size() >= 2) {
                 winners.add(currentTip);
             }
         }
 
+        // sort winners by correct guesses descending
         winners.sort(new Comparator<LotteryTip>()
         {
             @Override
@@ -67,6 +77,9 @@ public class Lottery {
         });
     }
 
+    /**
+     * Generate random numbers for the winner tip
+     */
     public void generateNumbers(){
         Random rd = new Random();
 
@@ -75,6 +88,9 @@ public class Lottery {
         }
     }
 
+    /**
+     * Generate test numbers: 1, 2, 3, 4, 5, 6
+     */
     public void generateTestNumbers() {
         for (int i = 0; i < AMOUNT_OF_NUMBERS; i++)
         {
@@ -90,10 +106,20 @@ public class Lottery {
         return numbers;
     }
 
+    /**
+     * Reset lottery
+     */
     public void reset() {
         this.numbers.clear();
         participants.clear();
         winners.clear();
+    }
+
+    /**
+     * Clear lotto numbers
+     */
+    public void clearNumbers() {
+        this.numbers.clear();
     }
 
     public ObservableList<LotteryTip> getParticipants()

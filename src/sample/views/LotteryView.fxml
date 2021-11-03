@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="673.0" prefWidth="600.0" style="-fx-background-color: F9FAFB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LotteryController">
+<AnchorPane prefHeight="673.0" prefWidth="600.0" style="-fx-background-color: F9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LotteryController">
    <children>
       <Label layoutX="38.0" layoutY="37.0" text="Lottozahlen" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="37.0" />
       <Button fx:id="generateButton" layoutX="343.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleGenerateNumbers" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #4F46E5;" text="Generieren" textFill="WHITE" />
@@ -28,6 +28,9 @@
           <TableColumn fx:id="pName" prefWidth="176.333251953125" text="Name" />
           <TableColumn fx:id="pTip" prefWidth="263.666748046875" text="Tipp" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Label layoutX="38.0" layoutY="413.0" text="Gewinner" />
       <TableView fx:id="winnersTable" layoutX="38.0" layoutY="436.0" prefHeight="200.0" prefWidth="516.0">
@@ -37,6 +40,9 @@
             <TableColumn fx:id="wTip" prefWidth="198.0" text="Tipp" />
             <TableColumn fx:id="wCorrectGuesses" prefWidth="108.0" text="Richtige Ziffern" />
          </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Button fx:id="resetButton" layoutX="474.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="34.0" prefWidth="83.0" style="-fx-border-color: #4F46E5; -fx-background-color: transparent;" text="Reset" textFill="#4f46e5" />
    </children>
