@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="279.0" prefWidth="276.0" style="-fx-background-color: F9FAFB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.TipController">
+   <children>
+      <Label layoutX="28.0" layoutY="35.0" text="Tip">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></Label>
+      <Label layoutX="29.0" layoutY="120.0" text="Name">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></Label>
+      <TextField fx:id="tipInput" layoutX="28.0" layoutY="58.0" prefHeight="34.0" prefWidth="221.0" />
+      <TextField fx:id="nameInput" layoutX="28.0" layoutY="143.0" prefHeight="34.0" prefWidth="221.0" />
+      <Button fx:id="tipButton" layoutX="28.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleTipSubmit" prefHeight="34.0" prefWidth="77.0" style="-fx-background-color: #4F46E5;" text="Button" textFill="white" />
+      <Label fx:id="errorMessage" layoutX="29.0" layoutY="93.0" text="Label" textFill="#dc2626" visible="false">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="successMessage" layoutX="142.0" layoutY="216.0" style="-fx-background-color: D1FAE5; -fx-padding: 5 10 5 10;" text="Tipp abgegeben" textFill="#047857" visible="false">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
