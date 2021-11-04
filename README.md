@@ -1,8 +1,9 @@
 # MyLottery
 
+A JavaFX Lottery Application
+
 ![Lottery Preview](./assets/Preview.png)
 
-A JavaFX Lottery Application
 
 ### 🎉 **Specials**:
 * 1️⃣ **Singleton Pattern**: `Lottery` 
